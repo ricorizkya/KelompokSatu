@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">KelompokSatuUser</string>
+    <string name="kelompok">Kelompok</string>
+    <string name="satu">Satu</string>
+    <string name="login_menggunakan_akun_google">Login menggunakan akun Google</string>
+    <string name="nanti_dulu">Lewati untuk saat ini</string>
+    <string name="dashboard">Dashboard</string>
+    <string name="paket">Paket</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="profil">Profil</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="guide">Tour Guide</string>
+    <string name="sumatra_barat">Sumatra Barat</string>
+    <string name="bali">Bali</string>
+    <string name="jambi">Jambi</string>
+    <string name="jawa_barat">Jawa Barat</string>
+    <string name="jawa_tengah">Jawa Tengah</string>
+    <string name="jawa_timur">Jawa Timur</string>
+    <string name="domisili">Domisili</string>
+    <string name="paket_terlaris">Paket Favorit</string>
+    <string name="nama_paket">Nama Paket</string>
+</resources>

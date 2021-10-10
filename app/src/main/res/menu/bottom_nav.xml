@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/paket_menu"
+        android:icon="@drawable/ic_mountains"
+        android:title="@string/paket" />
+
+    <item
+        android:id="@+id/pesanan_menu"
+        android:icon="@drawable/ic_shopping_list"
+        android:title="@string/pesanan" />
+
+    <item
+        android:id="@+id/user_menu"
+        android:icon="@drawable/ic_user"
+        android:title="@string/user" />
+
+    <item
+        android:id="@+id/guide_menu"
+        android:icon="@drawable/ic_wolf_2_"
+        android:title="@string/guide" />
+
+    <item
+        android:id="@+id/logout_menu"
+        android:icon="@drawable/ic_logout"
+        android:title="@string/logout" />
+</menu>

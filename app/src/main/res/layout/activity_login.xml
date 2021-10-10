@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.LoginActivity">
+
+    <ImageView
+        android:id="@+id/img_logo"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:src="@drawable/ic_wolf_1"
+        android:layout_marginTop="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_kelompok"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/kelompok"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_marginStart="110dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+    <TextView
+        android:id="@+id/tv_satu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/satu"
+        android:textColor="@color/teal_700"
+        android:textStyle="bold"
+        android:textSize="28sp"
+        android:layout_marginStart="5dp"
+        app:layout_constraintStart_toEndOf="@id/tv_kelompok"
+        app:layout_constraintTop_toBottomOf="@id/img_logo" />
+
+    <LinearLayout
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@drawable/rounded_btn"
+        android:onClick="btnLogin"
+        android:focusable="true"
+        android:clickable="true"
+        android:gravity="center"
+        android:padding="10dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_kelompok"
+        tools:ignore="OnClick">
+
+        <ImageView
+            android:id="@+id/img_google"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_google" />
+
+        <TextView
+            android:id="@+id/tv_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/login_menggunakan_akun_google"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

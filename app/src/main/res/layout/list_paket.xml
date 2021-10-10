@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cv_paket"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:cardCornerRadius="8dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_poster"
+            android:layout_width="142dp"
+            android:layout_height="130dp"
+            android:src="@drawable/ic_mountains"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_gunung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/merbabu_via_selo"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toEndOf="@id/img_poster"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_domisili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/jawa_tengah"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/img_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_gunung" />
+
+        <TextView
+            android:id="@+id/tv_durasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_3d_2n"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/img_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
+
+        <TextView
+            android:id="@+id/tv_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"
+            app:layout_constraintStart_toEndOf="@id/img_poster"
+            app:layout_constraintTop_toBottomOf="@id/tv_durasi" />
+
+        <TextView
+            android:id="@+id/tv_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1000000"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/tv_rp"
+            app:layout_constraintTop_toBottomOf="@id/tv_durasi" />
+
+        <TextView
+            android:id="@+id/tv_koma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/koma"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_harga"
+            app:layout_constraintTop_toBottomOf="@id/tv_durasi" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">Kelompok Satu</string>
+    <string name="paket">Paket</string>
+    <string name="pesanan">Pesanan</string>
+    <string name="user">User</string>
+    <string name="guide">Guide</string>
+    <string name="logout">Logout</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="koma">,-</string>
+    <string name="_1000000">1000000</string>
+    <string name="rp">Rp</string>
+    <string name="_3d_2n">3D 2N</string>
+    <string name="jawa_tengah">Jawa Tengah</string>
+    <string name="merbabu_via_selo">Merbabu via Selo</string>
+    <string name="halo_admin">Halo, Admin!</string>
+    <string name="tambah_paket">Tambah Paket</string>
+    <string name="tambah">Tambah</string>
+    <string name="pilih_gambar_untuk_poster">PIlih Gambar Untuk Poster</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="alamat_lengkap">Alamat Lengkap</string>
+    <string name="harga">Harga</string>
+    <string name="durasi">Durasi</string>
+    <string name="domisili">Domisili</string>
+    <string name="nama_paket">Nama Paket</string>
+    <string name="tambah_paket_pendakian">Tambah Paket Pendakian</string>
+    <string name="login_menggunakan_akun_google">Login menggunakan akun Google</string>
+    <string name="satu">Satu</string>
+    <string name="kelompok">Kelompok</string>
+    <string name="update">Update</string>
+    <string name="delete">Delete</string>
+    <string name="edit_hapus_paket">Edit Paket</string>
+    <string name="email">E-Mail</string>
+    <string name="nomor_hp">082144285696</string>
+    <string name="nama_guide">Nama Guide</string>
+    <string name="tambah_guide">Tambah Guide</string>
+    <string name="daftar_guide">Daftar Guide</string>
+    <string name="pilih_gambar_untuk_foto_profil">PIlih Gambar untuk Profil</string>
+    <string name="motto">Motto</string>
+    <string name="umur">Umur</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="edit_data_guide">Edit Data Guide</string>
+</resources>
