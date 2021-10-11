@@ -20,4 +20,16 @@
     <string name="domisili">Domisili</string>
     <string name="paket_terlaris">Paket Favorit</string>
     <string name="nama_paket">Nama Paket</string>
+    <string name="nama_guide">Nama Guide</string>
+    <string name="umur">Umur</string>
+    <string name="tahun">Tahun</string>
+    <string name="motto_guide">Motto Guide</string>
+    <string name="name">Kelompok Satu</string>
+    <string name="durasi">Durasi</string>
+    <string name="rp">Rp</string>
+    <string name="alamat">Alamat</string>
+    <string name="_1000000">1000000</string>
+    <string name="koma">,-</string>
+    <string name="pesan">Pesan</string>
+    <string name="deskripsi">Deskripsi</string>
 </resources>

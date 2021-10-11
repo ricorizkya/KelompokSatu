@@ -82,8 +82,8 @@ class TambahGuideActivity : AppCompatActivity() {
             binding.edtNamaGuide.text.toString(),
             binding.edtNomorGuide.text.toString(),
             binding.edtEmailGuide.text.toString(),
-            binding.edtNomorGuide.text.toString(),
             binding.edtAlamatGuide.text.toString(),
+            binding.edtUmurGuide.text.toString(),
             imageProfil,
             binding.edtMotoGuide.text.toString(),
         )

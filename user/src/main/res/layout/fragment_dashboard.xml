@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cream_new"
-    tools:context=".ui.dashboard.ui.DashboardFragment">
+    tools:context=".dashboard.ui.DashboardFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
                 android:id="@+id/bg_domisili"
                 android:layout_width="match_parent"
                 android:layout_height="360dp"
-                android:background="@color/white"
+                android:background="@drawable/card_domisili"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
@@ -67,28 +67,28 @@
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 android:textStyle="bold"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_hot_paket" />
+                app:layout_constraintTop_toTopOf="@id/bg_domisili" />
 
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/map"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
                 app:layout_constraintStart_toEndOf="@id/tv_domisili"
-                app:layout_constraintTop_toBottomOf="@id/rv_hot_paket" />
+                app:layout_constraintTop_toTopOf="@id/bg_domisili" />
 
             <ImageButton
                 android:id="@+id/btn_jatim"
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:background="@drawable/jatim"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintStart_toStartOf="@id/bg_domisili"
                 app:layout_constraintEnd_toStartOf="@id/btn_jateng"
                 app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
 
@@ -112,7 +112,7 @@
                 android:layout_width="90dp"
                 android:layout_height="100dp"
                 android:background="@drawable/jateng"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 app:layout_constraintStart_toEndOf="@id/btn_jatim"
                 app:layout_constraintEnd_toStartOf="@id/btn_jabar"
                 app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
@@ -136,7 +136,7 @@
                 android:layout_width="80dp"
                 android:layout_height="100dp"
                 android:background="@drawable/jabar"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 app:layout_constraintStart_toEndOf="@id/btn_jateng"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -242,18 +242,30 @@
                 android:textSize="26sp"
                 android:textStyle="bold"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="26dp"
+                android:layout_marginTop="20dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_jambi" />
+                app:layout_constraintTop_toBottomOf="@id/bg_domisili" />
 
             <ImageView
                 android:layout_width="28dp"
                 android:layout_height="28dp"
                 android:src="@drawable/ic_wolf_1_"
                 android:layout_marginStart="5dp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="24dp"
                 app:layout_constraintStart_toEndOf="@id/tv_guide"
-                app:layout_constraintTop_toBottomOf="@id/tv_jambi" />
+                app:layout_constraintTop_toBottomOf="@id/bg_domisili" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_guide"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_guide"
+                android:layout_marginStart="11dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="11dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_guide"
+                app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

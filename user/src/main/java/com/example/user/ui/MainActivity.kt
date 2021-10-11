@@ -2,10 +2,11 @@ package com.example.user.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.WindowManager
 import androidx.fragment.app.Fragment
 import com.example.user.R
 import com.example.user.databinding.ActivityMainBinding
-import com.example.user.ui.dashboard.ui.DashboardFragment
+import com.example.user.dashboard.ui.DashboardFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        actionBar?.hide()
 
         val dashboard = DashboardFragment()
 
