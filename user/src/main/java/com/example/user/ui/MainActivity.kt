@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import com.example.user.R
 import com.example.user.databinding.ActivityMainBinding
 import com.example.user.dashboard.ui.DashboardFragment
+import com.example.user.profile.ui.ProfilFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,14 +19,16 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        actionBar?.hide()
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val dashboard = DashboardFragment()
+        val profile = ProfilFragment()
 
         makeCurrentFragment(dashboard)
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.home_menu -> makeCurrentFragment(dashboard)
+                R.id.profil_menu -> makeCurrentFragment(profile)
             }
             true
         }

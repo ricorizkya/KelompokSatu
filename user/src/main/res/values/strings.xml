@@ -32,4 +32,16 @@
     <string name="koma">,-</string>
     <string name="pesan">Pesan</string>
     <string name="deskripsi">Deskripsi</string>
+    <string name="nama_depan">Nama Depan</string>
+    <string name="nama_belakang">Nama Belakang</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="e_mail">E-Mail</string>
+    <string name="pilih_tanggal_keberangkatan">Pilih Tanggal Keberangkatan</string>
+    <string name="upload_foto_ktp">Upload Foto KTP</string>
+    <string name="acc">Dengan ini saya menyatakan bahwa data yang isi merupakan data yang sebenar-benarnya dan dapat dipertanggung jawabkan.</string>
+    <string name="bayar_sekarang">Bayar Sekarang</string>
+    <string name="nama_user">Nama User</string>
+    <string name="edit_profil">Edit Profil</string>
+    <string name="logout">Logout</string>
+    <string name="wishlist">Wishlist</string>
 </resources>

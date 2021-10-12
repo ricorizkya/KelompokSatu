@@ -1,17 +1,21 @@
 package com.example.user.paket.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import com.bumptech.glide.Glide
 import com.example.user.R
 import com.example.user.databinding.ActivityDetailPaketBinding
 import com.example.user.paket.model.Paket
+import com.example.user.ui.MainActivity
 import com.google.firebase.database.*
 
 class DetailPaketActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_ID = "extra_id"
+        const val EXTRA_TITLE = "extra_title"
     }
 
     private lateinit var binding: ActivityDetailPaketBinding
@@ -23,12 +27,15 @@ class DetailPaketActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val id = intent.getStringExtra(EXTRA_ID)
-        actionBar?.title = id
+        val title = intent.getStringExtra(EXTRA_TITLE)
+        supportActionBar?.title = title
 
         getDataPaket()
 
         binding.btnPesan.setOnClickListener {
-
+            val intent = Intent(this, PesanPaketActivity::class.java)
+            intent.putExtra(PesanPaketActivity.EXTRA_ID, id)
+            startActivity(intent)
         }
     }
 

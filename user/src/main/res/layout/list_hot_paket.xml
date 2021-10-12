@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nama_paket"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
             android:ellipsize="end"
             android:layout_marginStart="10dp"
             android:layout_marginTop="15dp"
@@ -43,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="@string/domisili"
             android:textColor="@color/black"
-            android:textSize="16sp"
+            android:textSize="14sp"
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/img_poster"
             app:layout_constraintTop_toBottomOf="@id/tv_nama_paket" />
