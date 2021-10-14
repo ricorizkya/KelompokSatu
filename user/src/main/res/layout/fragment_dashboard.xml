@@ -47,18 +47,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_hot_paket" />
 
-            <View
-                android:id="@+id/bg_domisili"
-                android:layout_width="match_parent"
-                android:layout_height="360dp"
-                android:background="@drawable/card_domisili"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintEnd_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/rv_hot_paket"
-                app:layout_constraintEnd_toEndOf="parent" />
-
             <TextView
                 android:id="@+id/tv_domisili"
                 android:layout_width="wrap_content"
@@ -67,171 +55,182 @@
                 android:textColor="@color/black"
                 android:textSize="22sp"
                 android:textStyle="bold"
-                android:layout_marginStart="36dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="10dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/bg_domisili" />
+                app:layout_constraintTop_toBottomOf="@id/rv_hot_paket" />
 
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/map"
                 android:layout_marginStart="10dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="10dp"
                 app:layout_constraintStart_toEndOf="@id/tv_domisili"
-                app:layout_constraintTop_toTopOf="@id/bg_domisili" />
+                app:layout_constraintTop_toBottomOf="@id/rv_hot_paket" />
 
-            <ImageButton
-                android:id="@+id/btn_jatim"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:background="@drawable/jatim"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="@id/bg_domisili"
-                app:layout_constraintEnd_toStartOf="@id/btn_jateng"
-                app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
-
-            <TextView
-                android:id="@+id/tv_jatim"
-                android:layout_width="80dp"
+            <androidx.cardview.widget.CardView
+                android:id="@+id/bg_domisili"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/jawa_timur"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
+                android:background="@drawable/card_domisili"
+                app:cardCornerRadius="15dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tv_jateng"
-                app:layout_constraintTop_toBottomOf="@id/btn_jatim" />
-
-            <ImageButton
-                android:id="@+id/btn_jateng"
-                android:layout_width="90dp"
-                android:layout_height="100dp"
-                android:background="@drawable/jateng"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toEndOf="@id/btn_jatim"
-                app:layout_constraintEnd_toStartOf="@id/btn_jabar"
-                app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
-
-            <TextView
-                android:id="@+id/tv_jateng"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text="@string/jawa_tengah"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                app:layout_constraintStart_toEndOf="@id/tv_jatim"
-                app:layout_constraintEnd_toStartOf="@id/tv_jabar"
-                app:layout_constraintTop_toBottomOf="@id/btn_jateng" />
-
-            <ImageButton
-                android:id="@+id/btn_jabar"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:background="@drawable/jabar"
-                android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                app:layout_constraintStart_toEndOf="@id/btn_jateng"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_domisili" />
+                app:layout_constraintEnd_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_domisili"
+                app:layout_constraintEnd_toEndOf="parent" >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <ImageButton
+                        android:id="@+id/btn_jatim"
+                        android:layout_width="50dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/jatim"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_jabar"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/jawa_barat"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_jateng"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_jabar" />
+                    <TextView
+                        android:id="@+id/tv_jatim"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jawa_timur"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_jatim" />
 
-            <ImageButton
-                android:id="@+id/btn_jambi"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:background="@drawable/jambi"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="22dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/btn_bali"
-                app:layout_constraintTop_toBottomOf="@id/tv_jatim" />
+                    <ImageButton
+                        android:id="@+id/btn_jateng"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/jateng"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginStart="80dp"
+                        app:layout_constraintStart_toEndOf="@id/btn_jatim"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_jambi"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/jambi"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="5dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tv_bali"
-                app:layout_constraintTop_toBottomOf="@id/btn_jambi" />
+                    <TextView
+                        android:id="@+id/tv_jateng"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jawa_tengah"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_jatim"
+                        app:layout_constraintEnd_toStartOf="@id/tv_jabar"
+                        app:layout_constraintTop_toBottomOf="@id/btn_jateng" />
 
-            <ImageButton
-                android:id="@+id/btn_bali"
-                android:layout_width="90dp"
-                android:layout_height="100dp"
-                android:background="@drawable/bali"
-                android:layout_marginTop="22dp"
-                app:layout_constraintStart_toEndOf="@id/btn_jambi"
-                app:layout_constraintEnd_toStartOf="@id/btn_jabar"
-                app:layout_constraintTop_toBottomOf="@id/tv_jateng" />
+                    <ImageButton
+                        android:id="@+id/btn_jabar"
+                        android:layout_width="50dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/jabar"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginEnd="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_bali"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/bali"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                app:layout_constraintStart_toEndOf="@id/tv_jambi"
-                app:layout_constraintEnd_toStartOf="@id/tv_sumbar"
-                app:layout_constraintTop_toBottomOf="@id/btn_bali" />
+                    <TextView
+                        android:id="@+id/tv_jabar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jawa_barat"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="22dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_jabar" />
 
-            <ImageButton
-                android:id="@+id/btn_sumbar"
-                android:layout_width="80dp"
-                android:layout_height="100dp"
-                android:background="@drawable/sumbar"
-                android:layout_marginTop="22dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintStart_toEndOf="@id/btn_bali"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_jabar" />
+                    <ImageButton
+                        android:id="@+id/btn_jambi"
+                        android:layout_width="50dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/jambi"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginTop="22dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_jatim" />
 
-            <TextView
-                android:id="@+id/tv_sumbar"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:text="@string/sumatra_barat"
-                android:textColor="@color/green_new"
-                android:textAlignment="center"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="5dp"
-                android:layout_marginEnd="16dp"
-                app:layout_constraintStart_toEndOf="@id/tv_bali"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_sumbar" />
+                    <TextView
+                        android:id="@+id/tv_jambi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/jambi"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="36dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_jambi" />
+
+                    <ImageButton
+                        android:id="@+id/btn_bali"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/bali"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginStart="82dp"
+                        app:layout_constraintStart_toEndOf="@id/btn_jambi"
+                        app:layout_constraintTop_toBottomOf="@id/tv_jateng" />
+
+                    <TextView
+                        android:id="@+id/tv_bali"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/bali"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginStart="106dp"
+                        android:layout_marginTop="5dp"
+                        app:layout_constraintStart_toEndOf="@id/tv_jambi"
+                        app:layout_constraintTop_toBottomOf="@id/btn_bali" />
+
+                    <ImageButton
+                        android:id="@+id/btn_sumbar"
+                        android:layout_width="60dp"
+                        android:layout_height="70dp"
+                        android:background="@drawable/sumbar"
+                        android:layout_marginTop="22dp"
+                        android:layout_marginEnd="32dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tv_jabar" />
+
+                    <TextView
+                        android:id="@+id/tv_sumbar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sumatra_barat"
+                        android:textColor="@color/green_new"
+                        android:textAlignment="center"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="16dp"
+                        android:layout_marginBottom="16dp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/btn_sumbar"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:id="@+id/tv_guide"
@@ -261,7 +260,6 @@
                 android:layout_height="wrap_content"
                 tools:listitem="@layout/list_guide"
                 android:layout_marginStart="11dp"
-                android:layout_marginTop="10dp"
                 android:layout_marginEnd="11dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_guide"
