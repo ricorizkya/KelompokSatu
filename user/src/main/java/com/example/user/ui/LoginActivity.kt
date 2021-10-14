@@ -9,12 +9,14 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.user.R
 import com.example.user.databinding.ActivityLoginBinding
+import com.example.user.profile.model.Profil
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
+import com.google.firebase.database.FirebaseDatabase
 
 class LoginActivity : AppCompatActivity() {
 
@@ -79,7 +81,7 @@ class LoginActivity : AppCompatActivity() {
         auth.signInWithCredential(credential)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(applicationContext, "Login with credential success", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, "Selamat Datang ${auth.currentUser?.displayName}", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, MainActivity::class.java))
                     finish()
                 }else {

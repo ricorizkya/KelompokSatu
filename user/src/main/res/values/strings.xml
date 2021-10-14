@@ -44,4 +44,6 @@
     <string name="edit_profil">Edit Profil</string>
     <string name="logout">Logout</string>
     <string name="wishlist">Wishlist</string>
+    <string name="update_data">Update Data</string>
+    <string name="pilih_gambar_untuk_foto_profil">Pilih Gambar untuk Foto Profil</string>
 </resources>

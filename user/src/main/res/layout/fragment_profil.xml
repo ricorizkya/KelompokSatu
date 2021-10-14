@@ -29,15 +29,38 @@
             android:layout_height="wrap_content"
             android:text="@string/nama_user"
             android:textColor="@color/black"
-            android:textSize="18sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             android:ellipsize="end"
             android:layout_marginStart="5dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="50dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintStart_toEndOf="@id/img_profile"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageView
+            android:id="@+id/btn_logout"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_logout_24"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/logout"
+            android:textSize="16sp"
+            android:textColor="@color/red"
+            android:textStyle="bold"
+            android:layout_marginTop="14dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toStartOf="@id/btn_logout"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tv_email_user"
@@ -46,62 +69,12 @@
             android:text="@string/e_mail"
             android:textColor="@color/black"
             android:textSize="16sp"
+            android:textStyle="bold"
             android:ellipsize="end"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="16dp"
             app:layout_constraintStart_toEndOf="@id/img_profile"
             app:layout_constraintTop_toBottomOf="@id/tv_name_user"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <TextView
-            android:id="@+id/tv_nomor_user"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/nomor_telepon"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toEndOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_email_user" />
-
-        <TextView
-            android:id="@+id/tv_alamat_user"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:text="@string/alamat"
-            android:textColor="@color/black"
-            android:textSize="16sp"
-            android:ellipsize="end"
-            android:justificationMode="inter_word"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toEndOf="@id/img_profile"
-            app:layout_constraintTop_toBottomOf="@id/tv_nomor_user"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <Button
-            android:id="@+id/btn_edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/edit_profil"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/img_profile"
-            app:layout_constraintEnd_toEndOf="parent" />
-
-        <Button
-            android:id="@+id/btn_logout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/logout"
-            android:backgroundTint="@color/red"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_edit"
             app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
@@ -113,9 +86,8 @@
             android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/btn_logout" />
+            app:layout_constraintTop_toBottomOf="@id/img_profile" />
 
         <View
             android:id="@+id/bg"

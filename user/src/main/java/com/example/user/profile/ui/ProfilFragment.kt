@@ -13,6 +13,7 @@ import com.example.user.databinding.FragmentProfilBinding
 import com.example.user.paket.model.Paket
 import com.example.user.profile.adapter.WishlistAdapter
 import com.example.user.ui.LoginActivity
+import com.example.user.ui.MainActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
@@ -40,6 +41,7 @@ class ProfilFragment : Fragment() {
 
         binding.tvNameUser.text = currentUser?.displayName
         binding.tvEmailUser.text = currentUser?.email
+
         Glide.with(this)
             .load(currentUser?.photoUrl)
             .into(binding.imgProfile)
@@ -50,10 +52,6 @@ class ProfilFragment : Fragment() {
             wishlistRecyclerView.setHasFixedSize(true)
             wishlistArrayList = arrayListOf()
             getDataWishlist()
-        }
-
-        binding.btnEdit.setOnClickListener {
-
         }
 
         binding.btnLogout.setOnClickListener {
