@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KelompokSatu">
-        <activity android:name=".profile.ui.EditProfilActivity"></activity>
+        <activity android:name=".paket.ui.BayarPesananActivity"></activity>
+        <activity android:name=".profile.ui.EditProfilActivity" />
         <activity android:name=".paket.ui.PesanPaketActivity" />
         <activity android:name=".paket.ui.DetailPaketActivity" />
         <activity android:name=".ui.LoginActivity" />

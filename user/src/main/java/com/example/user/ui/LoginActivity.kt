@@ -9,7 +9,6 @@ import android.view.WindowManager
 import android.widget.Toast
 import com.example.user.R
 import com.example.user.databinding.ActivityLoginBinding
-import com.example.user.profile.model.Profil
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions

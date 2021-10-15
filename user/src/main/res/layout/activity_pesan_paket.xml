@@ -146,6 +146,62 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
 
+        <TextView
+            android:id="@+id/tv_id_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_user"
+            app:layout_constraintStart_toEndOf="@id/tv_gambar"
+            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+
+        <TextView
+            android:id="@+id/tv_email_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/e_mail"
+            app:layout_constraintStart_toEndOf="@id/tv_gambar"
+            app:layout_constraintTop_toBottomOf="@id/tv_id_user" />
+
+        <TextView
+            android:id="@+id/tv_nama_paket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_paket"
+            app:layout_constraintStart_toEndOf="@id/tv_id_user"
+            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+
+        <TextView
+            android:id="@+id/tv_durasi_paket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/durasi"
+            app:layout_constraintStart_toEndOf="@id/tv_email_user"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_paket" />
+
+        <TextView
+            android:id="@+id/tv_alamat_paket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/alamat"
+            app:layout_constraintStart_toEndOf="@id/tv_nama_paket"
+            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+
+        <TextView
+            android:id="@+id/tv_harga_paket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1000000"
+            app:layout_constraintStart_toEndOf="@id/tv_durasi_paket"
+            app:layout_constraintTop_toBottomOf="@id/tv_alamat_paket" />
+
+        <TextView
+            android:id="@+id/tv_gambar_paket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_paket"
+            app:layout_constraintStart_toEndOf="@id/tv_harga_paket"
+            app:layout_constraintTop_toBottomOf="@id/tv_alamat_paket" />
+
         <ImageButton
             android:id="@+id/btn_image_profile"
             android:layout_width="match_parent"
@@ -207,6 +263,15 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_acc"
             app:layout_constraintEnd_toEndOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
