@@ -112,27 +112,38 @@
                 android:hint="@string/alamat" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/input_tanggal_user"
-            android:layout_width="match_parent"
+        <TextView
+            android:id="@+id/tv_tanggal_berangkat"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:text="@string/pilih_tanggal_keberangkatan"
+            android:textColor="@color/black"
+            android:textSize="16sp"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/input_alamat_user"
-            app:layout_constraintEnd_toEndOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/input_alamat_user" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edt_tanggal_user"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:clickable="false"
-                android:cursorVisible="false"
-                android:focusableInTouchMode="false"
-                android:inputType="datetime"
-                android:hint="@string/pilih_tanggal_keberangkatan" />
-        </com.google.android.material.textfield.TextInputLayout>
+        <ImageView
+            android:id="@+id/btn_calendar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_baseline_calendar_today_24"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal_berangkat" />
+
+        <TextView
+            android:id="@+id/tv_tanggal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/tanggal"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toEndOf="@id/btn_calendar"
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal_berangkat" />
 
         <TextView
             android:id="@+id/tv_gambar"
@@ -144,7 +155,7 @@
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+            app:layout_constraintTop_toBottomOf="@id/btn_calendar" />
 
         <TextView
             android:id="@+id/tv_id_user"
@@ -152,7 +163,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nama_user"
             app:layout_constraintStart_toEndOf="@id/tv_gambar"
-            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal" />
 
         <TextView
             android:id="@+id/tv_email_user"
@@ -168,7 +179,7 @@
             android:layout_height="wrap_content"
             android:text="@string/nama_paket"
             app:layout_constraintStart_toEndOf="@id/tv_id_user"
-            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal" />
 
         <TextView
             android:id="@+id/tv_durasi_paket"
@@ -184,7 +195,7 @@
             android:layout_height="wrap_content"
             android:text="@string/alamat"
             app:layout_constraintStart_toEndOf="@id/tv_nama_paket"
-            app:layout_constraintTop_toBottomOf="@id/input_tanggal_user" />
+            app:layout_constraintTop_toBottomOf="@id/tv_tanggal" />
 
         <TextView
             android:id="@+id/tv_harga_paket"
@@ -257,6 +268,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/bayar_sekarang"
+            android:enabled="false"
             android:layout_marginStart="16dp"
             android:layout_marginTop="10dp"
             android:layout_marginEnd="16dp"

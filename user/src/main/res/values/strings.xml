@@ -46,4 +46,9 @@
     <string name="wishlist">Wishlist</string>
     <string name="update_data">Update Data</string>
     <string name="pilih_gambar_untuk_foto_profil">Pilih Gambar untuk Foto Profil</string>
+    <string name="tanggal">--/--/----</string>
+    <string name="belum_bayar">Belum Bayar</string>
+    <string name="proses">Proses</string>
+    <string name="selesai">Selesai</string>
+    <string name="dalam_perjalanan">Dalam Perjalanan</string>
 </resources>

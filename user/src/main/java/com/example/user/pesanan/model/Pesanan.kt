@@ -1,8 +1,9 @@
-package com.example.user.paket.model
+package com.example.user.pesanan.model
 
 class Pesanan {
     var idPesanan: String? = null
     var idUser: String? = null
+    var tglIni: String? = null
     var namaDepan: String? = null
     var namaBelakang: String? = null
     var nomorTelepon: String? = null
@@ -18,11 +19,13 @@ class Pesanan {
     var guide: String? = null
     var emailUserNamaPaket: String? = null
     var statusPembayaran: String? = null
+    var idUserStatusPembayaran: String? = null
 
     constructor() {}
 
     constructor(idPesanan: String?,
                 idUser: String?,
+                tglIni: String?,
                 namaDepan: String?,
                 namaBelakang: String?,
                 nomorTelepon: String?,
@@ -37,9 +40,11 @@ class Pesanan {
                 hargaPaket: String?,
                 guide: String?,
                 emailUserNamaPaket: String?,
-                statusPembayaran: String?) {
+                statusPembayaran: String?,
+                idUserStatusPembayaran: String?) {
         this.idPesanan = idPesanan
         this.idUser = idUser
+        this.tglIni = tglIni
         this.namaDepan = namaDepan
         this.namaBelakang = namaBelakang
         this.nomorTelepon = nomorTelepon
@@ -55,6 +60,7 @@ class Pesanan {
         this.guide = guide
         this.emailUserNamaPaket = emailUserNamaPaket
         this.statusPembayaran = statusPembayaran
+        this.idUserStatusPembayaran = idUserStatusPembayaran
     }
 
 }

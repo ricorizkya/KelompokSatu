@@ -1,6 +1,7 @@
 package com.example.user.paket.ui
 
 import android.app.Activity
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.net.Uri
@@ -11,17 +12,19 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import com.bumptech.glide.Glide
 import com.example.user.R
 import com.example.user.databinding.ActivityPesanPaketBinding
 import com.example.user.paket.model.Paket
-import com.example.user.paket.model.Pesanan
+import com.example.user.pesanan.model.Pesanan
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.google.firebase.storage.FirebaseStorage
 import java.util.*
+import android.widget.DatePicker
+import com.example.user.pesanan.ui.BayarPesananActivity
+import java.text.SimpleDateFormat
 
-class PesanPaketActivity : AppCompatActivity() {
+class PesanPaketActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListener {
 
     companion object {
         const val EXTRA_ID = "extra_id"
@@ -31,6 +34,14 @@ class PesanPaketActivity : AppCompatActivity() {
     private lateinit var query: Query
     var selectedImageUri: Uri? = null
 
+    var day = 0
+    var month = 0
+    var year = 0
+
+    var saveDay = 0
+    var saveMonth = 0
+    var saveYear = 0
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityPesanPaketBinding.inflate(layoutInflater)
@@ -38,6 +49,7 @@ class PesanPaketActivity : AppCompatActivity() {
 
         getDataPaket()
         dataInvisible()
+        pickDate()
 
         binding.progressCircular.visibility = View.INVISIBLE
 
@@ -48,9 +60,12 @@ class PesanPaketActivity : AppCompatActivity() {
             activityImage.launch(intent)
         }
 
-        binding.btnBayar.setOnClickListener {
-            simpanPesanan()
-            binding.progressCircular.visibility = View.VISIBLE
+        binding.radioGrup.setOnCheckedChangeListener { group, checkedId ->
+            binding.btnBayar.isEnabled = true
+            binding.btnBayar.setOnClickListener {
+                simpanPesanan()
+                binding.progressCircular.visibility = View.VISIBLE
+            }
         }
     }
 
@@ -63,6 +78,29 @@ class PesanPaketActivity : AppCompatActivity() {
             binding.imgPosterProfile.visibility = View.GONE
             binding.btnImageProfile.setBackgroundDrawable(bitmap)
         }
+    }
+
+    override fun onDateSet(view: DatePicker?, year: Int, month: Int, dayOfMonth: Int) {
+        saveDay = dayOfMonth
+        saveMonth = month
+        saveYear = year
+
+        getDateTimeCalendar()
+        binding.tvTanggal.text = "$saveDay/$saveMonth/$saveYear"
+    }
+
+    private fun pickDate() {
+        binding.btnCalendar.setOnClickListener {
+            getDateTimeCalendar()
+            DatePickerDialog(this, this, year, month, day).show()
+        }
+    }
+
+    private fun getDateTimeCalendar() {
+        val cal = Calendar.getInstance()
+        day = cal.get(Calendar.DAY_OF_MONTH)
+        month = cal.get(Calendar.MONTH)
+        year = cal.get(Calendar.YEAR)
     }
 
     private fun getDataPaket() {
@@ -106,10 +144,16 @@ class PesanPaketActivity : AppCompatActivity() {
         val auth = FirebaseAuth.getInstance()
         val currentUser = auth.currentUser
         val idUser = currentUser?.uid.toString()
-        val emailUser = currentUser?.email.toString()
-        val emailUserNamaPaket = "${emailUser}" + "${binding.tvNamaPaket.text}"
+        val emailUser = currentUser?.email
+        val status = "Belum Bayar"
+        val emailUserNamaPaket = "$emailUser - " + "${binding.tvNamaPaket.text}"
+        val idUserStatus = "$status - $emailUser"
 
-        if (binding.edtNamaDepanUser.text.toString().isEmpty() && binding.edtNamaBelakangUser.text.toString().isEmpty() && binding.edtNomorUser.text.toString().isEmpty() && binding.edtEmailUser.text.toString().isEmpty() && binding.edtAlamatUser.text.toString().isEmpty() && binding.edtTanggalUser.text!!.isEmpty() && image.isEmpty()) {
+        val sdfFormat = SimpleDateFormat("dd/M/yyyy hh:mm")
+        val currentDate = sdfFormat.format(Date())
+        val tanggalIni = currentDate.toString()
+
+        if (binding.edtNamaDepanUser.text.toString().isEmpty() && binding.edtNamaBelakangUser.text.toString().isEmpty() && binding.edtNomorUser.text.toString().isEmpty() && binding.edtEmailUser.text.toString().isEmpty() && binding.edtAlamatUser.text.toString().isEmpty() && binding.tvTanggal.text.equals(R.string.tanggal) && image.isEmpty()) {
             return Toast.makeText(applicationContext, "Form Tidak Boleh Kosong", Toast.LENGTH_SHORT).show()
         }
 
@@ -118,14 +162,16 @@ class PesanPaketActivity : AppCompatActivity() {
         val pesanan = Pesanan(
                 pesananId,
                 idUser,
+                tanggalIni,
                 binding.edtNamaDepanUser.text.toString(), binding.edtNamaBelakangUser.text.toString(),
                 binding.edtNomorUser.text.toString(), binding.edtEmailUser.text.toString(),
-                binding.edtAlamatUser.text.toString(), binding.edtTanggalUser.text.toString(),
+                binding.edtAlamatUser.text.toString(), binding.tvTanggal.text.toString(),
                 image, binding.tvNamaPaket.text.toString(),
                 binding.tvGambarPaket.text.toString(), binding.tvDurasiPaket.text.toString(),
                 binding.tvAlamatPaket.text.toString(), binding.tvHargaPaket.text.toString(),
                 null, emailUserNamaPaket,
-                "Belum Terbayar"
+                status,
+                idUserStatus
         )
 
         if (pesananId != null) {
@@ -135,6 +181,7 @@ class PesanPaketActivity : AppCompatActivity() {
                         val intent = Intent(this, BayarPesananActivity::class.java)
                         intent.putExtra(BayarPesananActivity.EXTRA_ID, pesananId)
                         startActivity(intent)
+                        finish()
                     }
         }
     }

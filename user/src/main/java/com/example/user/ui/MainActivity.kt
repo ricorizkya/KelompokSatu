@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment
 import com.example.user.R
 import com.example.user.databinding.ActivityMainBinding
 import com.example.user.dashboard.ui.DashboardFragment
+import com.example.user.paket.ui.fragment.PaketFragment
+import com.example.user.pesanan.ui.fragment.PesananFragment
 import com.example.user.profile.ui.ProfilFragment
 
 class MainActivity : AppCompatActivity() {
@@ -22,12 +24,16 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val dashboard = DashboardFragment()
+        val paket = PaketFragment()
+        val pesanan = PesananFragment()
         val profile = ProfilFragment()
 
         makeCurrentFragment(dashboard)
         binding.bottomNav.setOnItemSelectedListener {
             when(it.itemId) {
                 R.id.home_menu -> makeCurrentFragment(dashboard)
+                R.id.paket_menu -> makeCurrentFragment(paket)
+                R.id.pesanan_menu -> makeCurrentFragment(pesanan)
                 R.id.profil_menu -> makeCurrentFragment(profile)
             }
             true
