@@ -68,8 +68,8 @@ class TambahGuideActivity : AppCompatActivity() {
             binding.edtNamaGuide.error = "Form tidak boleh kosong"
             binding.edtNomorGuide.error = "Form tidak boleh kosong"
             binding.edtEmailGuide.error = "Form tidak boleh kosong"
-            binding.edtNomorGuide.error = "Form tidak boleh kosong"
             binding.edtAlamatGuide.error = "Form tidak boleh kosong"
+            binding.edtUmurGuide.error = "Form tidak boleh kosong"
             binding.edtMotoGuide.error = "Form tidak boleh kosong"
 
             return Toast.makeText(applicationContext, "Form tidak boleh kosong", Toast.LENGTH_SHORT).show()
@@ -85,7 +85,7 @@ class TambahGuideActivity : AppCompatActivity() {
             binding.edtAlamatGuide.text.toString(),
             binding.edtUmurGuide.text.toString(),
             imageProfil,
-            binding.edtMotoGuide.text.toString(),
+            binding.edtMotoGuide.text.toString()
         )
 
         if (guideId != null) {
