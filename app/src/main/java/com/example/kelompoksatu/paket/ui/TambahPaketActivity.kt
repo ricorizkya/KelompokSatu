@@ -82,7 +82,7 @@ class TambahPaketActivity : AppCompatActivity() {
             binding.edtDeskripsiPaket.text.toString(),
             image,
             "Tidak Wishlist",
-            null
+            "null"
         )
 
         if (paketId != null) {

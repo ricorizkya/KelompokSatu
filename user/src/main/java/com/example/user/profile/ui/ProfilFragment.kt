@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.bumptech.glide.Glide
 import com.example.user.databinding.FragmentProfilBinding
 import com.example.user.paket.model.Paket
@@ -22,6 +23,7 @@ class ProfilFragment : Fragment() {
     private lateinit var binding: FragmentProfilBinding
     private lateinit var wishlistRecyclerView: RecyclerView
     private lateinit var wishlistArrayList: ArrayList<Paket>
+    private lateinit var lottieAnimationView: LottieAnimationView
     private lateinit var query: Query
     private lateinit var auth: FirebaseAuth
 
@@ -42,6 +44,9 @@ class ProfilFragment : Fragment() {
         binding.tvNameUser.text = currentUser?.displayName
         binding.tvEmailUser.text = currentUser?.email
 
+        lottieAnimationView = binding.imgEmpty
+        lottieAnimationView.animate()
+
         Glide.with(this)
             .load(currentUser?.photoUrl)
             .into(binding.imgProfile)
@@ -52,6 +57,7 @@ class ProfilFragment : Fragment() {
             wishlistRecyclerView.setHasFixedSize(true)
             wishlistArrayList = arrayListOf()
             getDataWishlist()
+            lottieAnimationView.visibility = View.INVISIBLE
         }
 
         binding.btnLogout.setOnClickListener {
@@ -63,7 +69,14 @@ class ProfilFragment : Fragment() {
     }
 
     private fun getDataWishlist() {
+        auth = FirebaseAuth.getInstance()
+        val currentUser = auth.currentUser
+        val email = currentUser?.email.toString()
+        val emailStatus = "$email - Wishlist"
+
         query = FirebaseDatabase.getInstance().getReference("paket")
+                .orderByChild("emailUserStatus")
+                .equalTo(emailStatus)
         query.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if (snapshot.exists()) {
