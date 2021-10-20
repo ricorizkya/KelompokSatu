@@ -52,4 +52,11 @@
     <string name="selesai">Selesai</string>
     <string name="dalam_perjalanan">Dalam Perjalanan</string>
     <string name="cari">Cari...</string>
+    <string name="nota_pesanan">Nota Pesanan</string>
+    <string name="data_diri">Data Diri</string>
+    <string name="pilih_metode_pembayaran">Metode Pembayaran</string>
+    <string name="bca">BCA a/n Rico Eka Rizkya 8365165838</string>
+    <string name="dana">DANA a/n Rico Eka Rizkya 082144285606</string>
+    <string name="upload_bukti_pembayaran">Upload Bukti Pembayaran</string>
+    <string name="verifikasi_pembayaran">Verifikasi Pembayaran</string>
 </resources>

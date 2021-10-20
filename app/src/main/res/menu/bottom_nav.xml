@@ -11,17 +11,7 @@
         android:title="@string/pesanan" />
 
     <item
-        android:id="@+id/user_menu"
-        android:icon="@drawable/ic_user"
-        android:title="@string/user" />
-
-    <item
         android:id="@+id/guide_menu"
         android:icon="@drawable/ic_wolf_2_"
         android:title="@string/guide" />
-
-    <item
-        android:id="@+id/logout_menu"
-        android:icon="@drawable/ic_logout"
-        android:title="@string/logout" />
 </menu>

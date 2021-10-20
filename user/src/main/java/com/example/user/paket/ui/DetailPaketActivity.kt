@@ -39,6 +39,13 @@ class DetailPaketActivity : AppCompatActivity() {
         supportActionBar?.title = title
 
         getDataPaket()
+
+        binding.btnPesan.setOnClickListener {val extras = intent
+            val id = intent.getStringExtra(EXTRA_ID)
+            val intent  = Intent(this, PesanPaketActivity::class.java)
+            intent.putExtra(PesanPaketActivity.EXTRA_ID, id)
+            startActivity(intent)
+        }
     }
 
     private fun getDataPaket() {

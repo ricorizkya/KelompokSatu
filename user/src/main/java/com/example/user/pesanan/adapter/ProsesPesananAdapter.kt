@@ -1,12 +1,15 @@
 package com.example.user.pesanan.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.user.databinding.ListPesananBinding
+import com.example.user.paket.ui.DetailPaketActivity
 import com.example.user.pesanan.model.Pesanan
+import com.example.user.pesanan.ui.BayarPesananActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class ProsesPesananAdapter(private val prosesList: ArrayList<Pesanan>): RecyclerView.Adapter<ProsesPesananAdapter.ProsesPesananViewHolder>() {
@@ -28,6 +31,11 @@ class ProsesPesananAdapter(private val prosesList: ArrayList<Pesanan>): Recycler
                     Glide.with(itemView.context)
                         .load(pesanan.imagePaket)
                         .into(imgPoster)
+                    itemView.setOnClickListener {
+                        val intent = Intent(itemView.context, BayarPesananActivity::class.java)
+                        intent.putExtra(BayarPesananActivity.EXTRA_ID, pesanan.idPesanan)
+                        itemView.context.startActivity(intent)
+                    }
                 }
         }
     }

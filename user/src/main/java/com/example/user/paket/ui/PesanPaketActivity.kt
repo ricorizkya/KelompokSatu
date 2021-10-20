@@ -169,9 +169,8 @@ class PesanPaketActivity : AppCompatActivity(), DatePickerDialog.OnDateSetListen
                 image, binding.tvNamaPaket.text.toString(),
                 binding.tvGambarPaket.text.toString(), binding.tvDurasiPaket.text.toString(),
                 binding.tvAlamatPaket.text.toString(), binding.tvHargaPaket.text.toString(),
-                null, emailUserNamaPaket,
-                status,
-                idUserStatus
+                "-", emailUserNamaPaket,
+                status, idUserStatus, "null"
         )
 
         if (pesananId != null) {

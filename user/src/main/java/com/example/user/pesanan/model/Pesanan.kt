@@ -20,6 +20,7 @@ class Pesanan {
     var emailUserNamaPaket: String? = null
     var statusPembayaran: String? = null
     var idUserStatusPembayaran: String? = null
+    var fotoPembayaran: String? = null
 
     constructor() {}
 
@@ -41,7 +42,8 @@ class Pesanan {
                 guide: String?,
                 emailUserNamaPaket: String?,
                 statusPembayaran: String?,
-                idUserStatusPembayaran: String?) {
+                idUserStatusPembayaran: String?,
+                fotoPembayaran: String? ) {
         this.idPesanan = idPesanan
         this.idUser = idUser
         this.tglIni = tglIni
@@ -61,6 +63,7 @@ class Pesanan {
         this.emailUserNamaPaket = emailUserNamaPaket
         this.statusPembayaran = statusPembayaran
         this.idUserStatusPembayaran = idUserStatusPembayaran
+        this.fotoPembayaran = fotoPembayaran
     }
 
 }

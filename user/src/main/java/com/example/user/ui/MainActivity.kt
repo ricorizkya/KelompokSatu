@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val dashboard = DashboardFragment()
         val paket = PaketFragment()
