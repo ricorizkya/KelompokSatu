@@ -41,4 +41,7 @@
     <string name="e_mail">E-Mail</string>
     <string name="nomor_telepon">Nomor Telepon</string>
     <string name="edit_data_guide">Edit Data Guide</string>
+    <string name="proses">Proses</string>
+    <string name="selesai">Selesai</string>
+    <string name="daftar_pesanan">Daftar Pesanan</string>
 </resources>

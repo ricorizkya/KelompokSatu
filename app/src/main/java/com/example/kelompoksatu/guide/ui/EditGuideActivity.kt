@@ -36,6 +36,7 @@ class EditGuideActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.progressCircular.visibility = View.INVISIBLE
+        supportActionBar?.hide()
         getDataGuide()
 
         binding.btnImageProfile.setOnClickListener {

@@ -30,6 +30,7 @@ class TambahGuideActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        supportActionBar?.hide()
         binding.progressCircular.visibility = View.INVISIBLE
 
         binding.btnImageProfile.setOnClickListener {

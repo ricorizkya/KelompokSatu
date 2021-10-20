@@ -37,7 +37,7 @@ class EditPaketActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        actionBar?.hide()
+        supportActionBar?.hide()
         binding.progressCircular.visibility = View.INVISIBLE
 
         getDataPaket()
