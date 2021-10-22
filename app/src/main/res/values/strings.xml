@@ -44,4 +44,9 @@
     <string name="proses">Proses</string>
     <string name="selesai">Selesai</string>
     <string name="daftar_pesanan">Daftar Pesanan</string>
+    <string name="tanggal">--/--/----</string>
+    <string name="belum_bayar">Belum Bayar</string>
+    <string name="nama_user">Nama User</string>
+    <string name="data_pelanggan">Data Pelanggan</string>
+    <string name="data_paket">Data Paket</string>
 </resources>

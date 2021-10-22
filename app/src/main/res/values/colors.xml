@@ -10,4 +10,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="grey">#A3B4A2</color>
+    <color name="green">#0B6E4F</color>
+    <color name="cream_new">#F7f7f7</color>
 </resources>
