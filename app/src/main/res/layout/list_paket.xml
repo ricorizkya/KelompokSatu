@@ -25,15 +25,18 @@
 
         <TextView
             android:id="@+id/tv_gunung"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/merbabu_via_selo"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="18sp"
+            android:ellipsize="end"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             app:layout_constraintStart_toEndOf="@id/img_poster"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
         <TextView
             android:id="@+id/tv_domisili"
@@ -63,7 +66,7 @@
             android:layout_height="wrap_content"
             android:text="@string/rp"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="10dp"
             app:layout_constraintStart_toEndOf="@id/img_poster"
@@ -75,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="@string/_1000000"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             android:layout_marginStart="5dp"
             app:layout_constraintStart_toEndOf="@id/tv_rp"
@@ -87,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="@string/koma"
             android:textColor="@color/black"
-            android:textSize="24sp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/tv_harga"
             app:layout_constraintTop_toBottomOf="@id/tv_durasi" />

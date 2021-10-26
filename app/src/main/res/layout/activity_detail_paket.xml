@@ -1,147 +1,152 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".paket.ui.DetailPaketActivity">
 
-    <ImageView
-        android:id="@+id/img_poster"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:src="@drawable/ic_mountains"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tv_nama_paket"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/nama_paket"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:ellipsize="end"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_poster"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <ImageView
+            android:id="@+id/img_poster"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_mountains"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_domisili"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/domisili"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_nama_paket" />
+        <TextView
+            android:id="@+id/tv_nama_paket"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/nama_paket"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:ellipsize="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_poster"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_durasi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/durasi"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_alamat" />
+        <TextView
+            android:id="@+id/tv_domisili"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/domisili"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_nama_paket" />
 
-    <TextView
-        android:id="@+id/tv_alamat"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/alamat_lengkap"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:ellipsize="end"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_domisili"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/tv_durasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/durasi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_alamat" />
 
-    <TextView
-        android:id="@+id/tv_deskripsi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/deskripsi"
-        android:textColor="@color/black"
-        android:textSize="16sp"
-        android:ellipsize="end"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_durasi"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/tv_alamat"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/alamat_lengkap"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_domisili"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_rp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/rp"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginStart="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
+        <TextView
+            android:id="@+id/tv_deskripsi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/deskripsi"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:ellipsize="end"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_durasi"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_harga"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/_1000000"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginStart="5dp"
-        app:layout_constraintStart_toEndOf="@id/tv_rp"
-        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
+        <TextView
+            android:id="@+id/tv_rp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/rp"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
 
-    <TextView
-        android:id="@+id/tv_koma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/koma"
-        android:textColor="@color/black"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@id/tv_harga"
-        app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
+        <TextView
+            android:id="@+id/tv_harga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_1000000"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginStart="5dp"
+            app:layout_constraintStart_toEndOf="@id/tv_rp"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
 
-    <Button
-        android:id="@+id/btn_update"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/update"
-        android:backgroundTint="@color/teal_500"
-        android:layout_marginTop="10dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_harga"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <TextView
+            android:id="@+id/tv_koma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/koma"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_harga"
+            app:layout_constraintTop_toBottomOf="@id/tv_deskripsi" />
 
-    <Button
-        android:id="@+id/btn_delete"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/delete"
-        android:backgroundTint="@color/red"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_update"
-        app:layout_constraintEnd_toEndOf="parent" />
+        <Button
+            android:id="@+id/btn_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/update"
+            android:backgroundTint="@color/teal_500"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_harga"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <Button
+            android:id="@+id/btn_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/delete"
+            android:backgroundTint="@color/red"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_update"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

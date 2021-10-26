@@ -1,5 +1,6 @@
 package com.example.user.dashboard.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,6 +13,7 @@ import com.example.user.dashboard.adapter.HotPaketAdapter
 import com.example.user.dashboard.adapter.GuideAdapter
 import com.example.user.dashboard.model.Guide
 import com.example.user.paket.model.Paket
+import com.example.user.paket.ui.domisili.*
 import com.google.firebase.database.*
 
 class DashboardFragment : Fragment() {
@@ -47,6 +49,31 @@ class DashboardFragment : Fragment() {
             guideRecyclerView.setHasFixedSize(true)
             guideArrayList = arrayListOf()
             getDataGuide()
+
+            //Domisili
+            binding.cvJatim.setOnClickListener {
+                startActivity(Intent(activity, JatimActivity::class.java))
+            }
+
+            binding.cvJateng.setOnClickListener {
+                startActivity(Intent(activity, JatengActivity::class.java))
+            }
+
+            binding.cvJabar.setOnClickListener {
+                startActivity(Intent(activity, JabarActivity::class.java))
+            }
+
+            binding.cvJambi.setOnClickListener {
+                startActivity(Intent(activity, JambiActivity::class.java))
+            }
+
+            binding.cvBali.setOnClickListener {
+                startActivity(Intent(activity, BaliActivity::class.java))
+            }
+
+            binding.cvSumbar.setOnClickListener {
+                startActivity(Intent(activity, SumbarActivity::class.java))
+            }
 
         }
     }

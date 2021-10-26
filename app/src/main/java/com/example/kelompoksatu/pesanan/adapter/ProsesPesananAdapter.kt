@@ -1,5 +1,6 @@
 package com.example.kelompoksatu.pesanan.adapter
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.kelompoksatu.databinding.ListPesananBinding
 import com.example.kelompoksatu.pesanan.model.Pesanan
+import com.example.kelompoksatu.pesanan.ui.DetailPesananActivity
 
 class ProsesPesananAdapter(private val listPesanan: ArrayList<Pesanan>): RecyclerView.Adapter<ProsesPesananAdapter.ProsesPesananViewHolder>() {
 
@@ -21,6 +23,11 @@ class ProsesPesananAdapter(private val listPesanan: ArrayList<Pesanan>): Recycle
                 Glide.with(itemView.context)
                         .load(pesanan.fotoKTP)
                         .into(imgPoster)
+                itemView.setOnClickListener {
+                    val intent = Intent(itemView.context, DetailPesananActivity::class.java)
+                    intent.putExtra(DetailPesananActivity.EXTRA_ID, pesanan.idPesanan)
+                    itemView.context.startActivity(intent)
+                }
             }
         }
     }

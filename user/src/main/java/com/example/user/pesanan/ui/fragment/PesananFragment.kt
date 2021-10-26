@@ -17,8 +17,8 @@ class PesananFragment : Fragment() {
     companion object {
         @StringRes
         private val TAB_TITLES = intArrayOf(
-            R.string.proses,
-            R.string.selesai
+            R.string.belum_bayar,
+            R.string.dalam_perjalanan
         )
     }
 

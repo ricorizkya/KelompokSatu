@@ -49,4 +49,8 @@
     <string name="nama_user">Nama User</string>
     <string name="data_pelanggan">Data Pelanggan</string>
     <string name="data_paket">Data Paket</string>
+    <string name="reject">Reject</string>
+    <string name="accept">Accept</string>
+    <string name="input_nama_guide">Input Nama Guide</string>
+    <string name="keterangan">Keterangan</string>
 </resources>

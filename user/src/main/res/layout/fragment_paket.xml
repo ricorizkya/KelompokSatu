@@ -6,20 +6,269 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".paket.ui.fragment.PaketFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_search"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:listitem="@layout/list_paket"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_height="wrap_content">
+            <ImageView
+                android:id="@+id/img_jatim"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/jatim"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <TextView
+                android:id="@+id/tv_jatim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jawa_timur"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_jatim"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/header_jatim"/>
+            <View
+                android:id="@+id/header_jatim"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_jatim"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jatim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_jatim"
+                app:layout_constraintEnd_toEndOf="parent" />
 
+            <ImageView
+                android:id="@+id/img_jateng"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/jateng"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_jatim" />
+            <TextView
+                android:id="@+id/tv_jateng"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jawa_tengah"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_jateng"
+                app:layout_constraintTop_toBottomOf="@id/rv_jatim"
+                app:layout_constraintBottom_toTopOf="@id/header_jateng"/>
+            <View
+                android:id="@+id/header_jateng"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_jateng"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jateng"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_jateng"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_jabar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/jabar"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_jateng" />
+            <TextView
+                android:id="@+id/tv_jabar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jawa_barat"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_jabar"
+                app:layout_constraintTop_toBottomOf="@id/rv_jateng"
+                app:layout_constraintBottom_toTopOf="@id/header_jabar"/>
+            <View
+                android:id="@+id/header_jabar"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_jabar"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jabar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_jabar"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_jambi"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/jambi"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_jabar" />
+            <TextView
+                android:id="@+id/tv_jambi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/jambi"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_jambi"
+                app:layout_constraintTop_toBottomOf="@id/rv_jabar"
+                app:layout_constraintBottom_toTopOf="@id/header_jambi"/>
+            <View
+                android:id="@+id/header_jambi"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_jambi"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_jambi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_jambi"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_bali"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/bali"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_jambi" />
+            <TextView
+                android:id="@+id/tv_bali"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bali"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_bali"
+                app:layout_constraintTop_toBottomOf="@id/rv_jambi"
+                app:layout_constraintBottom_toTopOf="@id/header_bali"/>
+            <View
+                android:id="@+id/header_bali"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_bali"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_bali"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_bali"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <ImageView
+                android:id="@+id/img_sumbar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/jabar"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/rv_bali" />
+            <TextView
+                android:id="@+id/tv_sumbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sumatra_barat"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_marginStart="10dp"
+                app:layout_constraintStart_toEndOf="@id/img_sumbar"
+                app:layout_constraintTop_toBottomOf="@id/rv_bali"
+                app:layout_constraintBottom_toTopOf="@id/header_sumbar"/>
+            <View
+                android:id="@+id/header_sumbar"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/grey"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/img_sumbar"
+                app:layout_constraintEnd_toEndOf="parent" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_sumbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/list_paket"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/header_sumbar"
+                app:layout_constraintEnd_toEndOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </FrameLayout>

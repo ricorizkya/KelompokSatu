@@ -147,7 +147,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:inputType="textMultiLine"
-                android:ems="40"
                 android:hint="@string/deskripsi" />
         </com.google.android.material.textfield.TextInputLayout>
 

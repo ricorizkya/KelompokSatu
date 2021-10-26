@@ -11,7 +11,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.KelompokSatu">
-        <activity android:name=".pesanan.ui.BayarPesananActivity"></activity>
+        <activity android:name=".paket.ui.domisili.SumbarActivity"></activity>
+        <activity android:name=".paket.ui.domisili.BaliActivity" />
+        <activity android:name=".paket.ui.domisili.JambiActivity" />
+        <activity android:name=".paket.ui.domisili.JabarActivity" />
+        <activity android:name=".paket.ui.domisili.JatengActivity" />
+        <activity android:name=".paket.ui.domisili.JatimActivity" />
+        <activity android:name=".pesanan.ui.BayarPesananActivity" />
         <activity android:name=".profile.ui.EditProfilActivity" />
         <activity android:name=".paket.ui.PesanPaketActivity" />
         <activity android:name=".paket.ui.DetailPaketActivity" />
