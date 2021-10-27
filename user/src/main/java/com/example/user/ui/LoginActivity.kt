@@ -45,11 +45,6 @@ class LoginActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
         auth = FirebaseAuth.getInstance()
 
-        binding.tvLewati.setOnClickListener {
-            startActivity(Intent(this, MainActivity::class.java))
-            finish()
-        }
-
         binding.btnLogin.setOnClickListener {
             btnLogin(binding.btnLogin)
             binding.progressCircular.visibility = View.VISIBLE

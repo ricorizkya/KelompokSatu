@@ -11,7 +11,7 @@
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:src="@drawable/ic_wolf_1_"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="150dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -72,17 +72,6 @@
             android:textColor="@color/white"
             android:textStyle="bold" />
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_lewati"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nanti_dulu"
-        android:textColor="@color/black"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_login" />
 
     <ProgressBar
         android:id="@+id/progress_circular"

@@ -47,6 +47,7 @@
     <string name="pilih_gambar_untuk_foto_profil">Pilih Gambar untuk Foto Profil</string>
     <string name="tanggal">--/--/----</string>
     <string name="belum_bayar">Menunggu Pembayaran</string>
+    <string name="belum_bayar2">Belum Bayar</string>
     <string name="proses">Proses</string>
     <string name="selesai">Selesai</string>
     <string name="dalam_perjalanan">Pembayaran Selesai</string>
