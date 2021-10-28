@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.user.R
 import com.example.user.databinding.FragmentPesananProsesBinding
 import com.example.user.pesanan.adapter.ProsesPesananAdapter
@@ -19,6 +20,7 @@ class PesananProsesFragment : Fragment() {
     private lateinit var binding: FragmentPesananProsesBinding
     private lateinit var prosesArrayList: ArrayList<Pesanan>
     private lateinit var prosesRecyclerView: RecyclerView
+    private lateinit var lottieAnimationView: LottieAnimationView
     private lateinit var query: Query
     private lateinit var auth: FirebaseAuth
 
@@ -34,11 +36,6 @@ class PesananProsesFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         if (activity != null) {
-            prosesRecyclerView = binding.rvProses
-            prosesRecyclerView.layoutManager = LinearLayoutManager(context)
-            prosesRecyclerView.setHasFixedSize(true)
-
-            prosesArrayList = arrayListOf()
             getData()
         }
     }
@@ -48,7 +45,6 @@ class PesananProsesFragment : Fragment() {
         val currentUser = auth.currentUser
         val email = currentUser?.email
         val emailStatus = "Belum Bayar - $email"
-        val emailStatus2 = "Diproses - $email"
         query = FirebaseDatabase.getInstance().getReference("pesanan")
             .orderByChild("idUserStatusPembayaran").equalTo(emailStatus)
         query.addValueEventListener(object : ValueEventListener {
@@ -59,11 +55,20 @@ class PesananProsesFragment : Fragment() {
                         prosesArrayList.add(prosesPesanan!!)
                     }
                     prosesRecyclerView.adapter = ProsesPesananAdapter(prosesArrayList)
+
+                    prosesRecyclerView = binding.rvProses
+                    prosesRecyclerView.layoutManager = LinearLayoutManager(context)
+                    prosesRecyclerView.setHasFixedSize(true)
+                    prosesArrayList = arrayListOf()
+
+                    lottieAnimationView.visibility = View.INVISIBLE
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                lottieAnimationView = binding.imgEmpty
+                lottieAnimationView.animate()
+                lottieAnimationView.visibility = View.VISIBLE
             }
         })
     }

@@ -52,12 +52,7 @@ class ProfilFragment : Fragment() {
             .into(binding.imgProfile)
 
         if (activity != null) {
-            wishlistRecyclerView = binding.rvWishlist
-            wishlistRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
-            wishlistRecyclerView.setHasFixedSize(true)
-            wishlistArrayList = arrayListOf()
             getDataWishlist()
-            lottieAnimationView.visibility = View.INVISIBLE
         }
 
         binding.btnLogout.setOnClickListener {
@@ -85,12 +80,18 @@ class ProfilFragment : Fragment() {
                         wishlistArrayList.add(wishlitPaket!!)
                     }
                     wishlistRecyclerView.adapter = WishlistAdapter(wishlistArrayList)
+                    lottieAnimationView.visibility = View.INVISIBLE
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                lottieAnimationView.visibility = View.VISIBLE
             }
         })
+
+        wishlistRecyclerView = binding.rvWishlist
+        wishlistRecyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
+        wishlistRecyclerView.setHasFixedSize(true)
+        wishlistArrayList = arrayListOf()
     }
 }

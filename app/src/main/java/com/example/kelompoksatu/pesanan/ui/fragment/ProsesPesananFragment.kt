@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.airbnb.lottie.LottieAnimationView
 import com.example.kelompoksatu.R
 import com.example.kelompoksatu.databinding.FragmentProsesPesananBinding
 import com.example.kelompoksatu.pesanan.adapter.ProsesPesananAdapter
@@ -19,6 +20,7 @@ class ProsesPesananFragment : Fragment() {
     private lateinit var binding: FragmentProsesPesananBinding
     private lateinit var prosesArrayList: ArrayList<Pesanan>
     private lateinit var prosesRecyclerView: RecyclerView
+    private lateinit var lottieAnimationView: LottieAnimationView
     private lateinit var query: Query
 
     override fun onCreateView(
@@ -36,8 +38,8 @@ class ProsesPesananFragment : Fragment() {
             prosesRecyclerView = binding.rvPesanan
             prosesRecyclerView.layoutManager = LinearLayoutManager(context)
             prosesRecyclerView.setHasFixedSize(true)
-
             prosesArrayList = arrayListOf()
+
             getData()
         }
     }
@@ -52,11 +54,14 @@ class ProsesPesananFragment : Fragment() {
                         val prosesPesanan = pesananSnapshot.getValue(Pesanan::class.java)
                         prosesArrayList.add(prosesPesanan!!)
                     }
+                    binding.imgEmpty.visibility = View.INVISIBLE
                     prosesRecyclerView.adapter = ProsesPesananAdapter(prosesArrayList)
                 }
             }
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                lottieAnimationView = binding.imgEmpty
+                lottieAnimationView.animate()
+                binding.imgEmpty.visibility = View.VISIBLE
             }
         })
     }

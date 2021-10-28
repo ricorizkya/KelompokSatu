@@ -32,13 +32,12 @@ class DetailPesananActivity : AppCompatActivity() {
         getData()
 
         binding.btnAcc.setOnClickListener {
-            binding.progressCircular.visibility = View.VISIBLE
             accPesanan()
+            startActivity(Intent(this, MainActivity::class.java))
         }
 
         binding.btnReject.setOnClickListener {
             rejectPesanan()
-            emailReject()
         }
     }
 
@@ -60,7 +59,10 @@ class DetailPesananActivity : AppCompatActivity() {
                             binding.tvBelumBayar.visibility = View.GONE
                             binding.tvInputGuide.visibility = View.GONE
                             binding.inputNamaGuide.visibility = View.GONE
+                            binding.inputNamaGuide.visibility = View.GONE
                             binding.edtNamaGuide.visibility = View.GONE
+                            binding.edtKeterangan.visibility = View.GONE
+                            binding.inputKeterangan.visibility = View.GONE
                             binding.btnAcc.visibility = View.GONE
                             binding.btnReject.visibility = View.GONE
                         }
@@ -121,8 +123,8 @@ class DetailPesananActivity : AppCompatActivity() {
 
                             val intent = Intent(Intent.ACTION_SEND)
                             intent.data = Uri.parse("mailto:")
-                            intent.type = "text/plain"
-                            intent.putExtra(Intent.EXTRA_EMAIL, receipent)
+                            intent.type = "text/email"
+                            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(receipent))
                             intent.putExtra(Intent.EXTRA_SUBJECT, subject)
                             intent.putExtra(Intent.EXTRA_TEXT, "Pesanan Anda Berhasil Terverifikasi. Sampai bertemu di tanggal $message !")
 
@@ -141,14 +143,12 @@ class DetailPesananActivity : AppCompatActivity() {
                 //Update Data
                 val pesanan = mapOf(
                     "guide" to binding.edtNamaGuide.text.toString(),
-//                    "statusPembayaran" to "Terbayar",
+                    "statusPembayaran" to "Terbayar",
                     "statusPesanan" to "Accept",
                     "keterangan" to binding.edtKeterangan.text.toString()
                 )
                 ref.child(id).updateChildren(pesanan).addOnSuccessListener {
                     Log.d("ACCPESANAN","ACC Pesanan")
-                    startActivity(Intent(this, MainActivity::class.java))
-                    finish()
                 }
             }
         }
@@ -164,10 +164,42 @@ class DetailPesananActivity : AppCompatActivity() {
         if (extras != null) {
             val id = extras.getStringExtra(EXTRA_ID)
             if (id != null) {
+
+                //Get Data
+                query = FirebaseDatabase.getInstance().getReference("pesanan")
+                    .orderByChild("idPesanan")
+                    .equalTo(id)
+                query.addValueEventListener(object : ValueEventListener {
+                    override fun onDataChange(snapshot: DataSnapshot) {
+                        for (pesananSnapshot in snapshot.children) {
+                            val pesanan = pesananSnapshot.getValue(Pesanan::class.java)
+                            val receipent = pesanan?.emailUser
+                            val subject = pesanan?.namaPaket
+
+                            val intent = Intent(Intent.ACTION_SEND_MULTIPLE)
+                            intent.data = Uri.parse("mailto:")
+                            intent.type = "text/email"
+                            intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(receipent))
+                            intent.putExtra(Intent.EXTRA_SUBJECT, subject)
+                            intent.putExtra(Intent.EXTRA_TEXT, "Pesanan Anda Belum Terverifikasi. Pastikan Transfer Sesuai dengan Nominal yang Tertera")
+
+                            try {
+                                startActivity(Intent.createChooser(intent, "Pilih aplikasi untuk kirim email..."))
+                            }catch (e: Exception) {
+                                Toast.makeText(applicationContext, e.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
+                    override fun onCancelled(error: DatabaseError) {
+                        TODO("Not yet implemented")
+                    }
+                })
+
+                //Update Data
                 val ref = FirebaseDatabase.getInstance().getReference("pesanan")
                 val pesanan = mapOf(
                     "guide" to "-",
-                    "statusPembayaran" to "Terbayar",
+//                    "statusPembayaran" to "Terbayar",
                     "statusPesanan" to "Reject",
                     "keterangan" to binding.edtKeterangan.text.toString()
                 )
@@ -176,24 +208,5 @@ class DetailPesananActivity : AppCompatActivity() {
                 }
             }
         }
-    }
-
-    private fun emailAcc(email: String, subject: String, message: String) {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.data = Uri.parse("mailto:")
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
-        intent.putExtra(Intent.EXTRA_SUBJECT, arrayOf(subject))
-        intent.putExtra(Intent.EXTRA_TEXT, arrayOf(message))
-
-        try {
-            startActivity(Intent.createChooser(intent, "Pilih aplikasi untuk kirim email..."))
-        }catch (e: Exception) {
-            Toast.makeText(applicationContext, e.message, Toast.LENGTH_SHORT).show()
-        }
-    }
-
-    private fun emailReject() {
-
     }
 }

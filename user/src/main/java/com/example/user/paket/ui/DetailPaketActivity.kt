@@ -69,17 +69,17 @@ class DetailPaketActivity : AppCompatActivity() {
                                 .load(paket?.imagePoster)
                                 .into(binding.imgPoster)
 
-                            if (paket?.status == "Tidak Wishlist") {
+                            if (paket?.status == "Wishlist") {
                                 binding.btnWishlist.visibility = View.VISIBLE
-                                binding.btnNotWishlist.setOnClickListener {
-                                    addWishlist()
-                                    binding.btnNotWishlist.setImageResource(R.drawable.ic_baseline_favorite_24)
-                                }
-                            }else if (paket?.status == "Wishlist") {
-                                binding.btnNotWishlist.visibility = View.VISIBLE
+                                binding.btnNotWishlist.visibility = View.INVISIBLE
                                 binding.btnWishlist.setOnClickListener {
                                     deleteWishlist()
-                                    binding.btnWishlist.setImageResource(R.drawable.ic_baseline_favorite_border_24)
+                                }
+                            }else if (paket?.status == "Tidak Wishlist") {
+                                binding.btnNotWishlist.visibility = View.VISIBLE
+                                binding.btnWishlist.visibility = View.INVISIBLE
+                                binding.btnNotWishlist.setOnClickListener {
+                                    addWishlist()
                                 }
                             }
                         }
@@ -110,6 +110,7 @@ class DetailPaketActivity : AppCompatActivity() {
                 )
                 ref.child(id).updateChildren(paket).addOnSuccessListener {
                     Toast.makeText(applicationContext, "Paket Berhasil Ditambahkan ke Wishlist", Toast.LENGTH_SHORT).show()
+                    binding.btnNotWishlist.setImageResource(R.drawable.ic_baseline_favorite_24)
                 }
             }
         }
@@ -133,6 +134,7 @@ class DetailPaketActivity : AppCompatActivity() {
                 )
                 ref.child(id).updateChildren(paket).addOnSuccessListener {
                     Toast.makeText(applicationContext, "Paket Berhasil Dihapus Wishlist", Toast.LENGTH_SHORT).show()
+                    binding.btnWishlist.setImageResource(R.drawable.ic_baseline_favorite_border_24)
                 }
             }
         }
